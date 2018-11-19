@@ -31,7 +31,10 @@ def scrape():
     print(mars_data)
 
 
-    collection.insert_one(mars_data)
+    collection.update({}, mars_data, upsert=True)
+
+
+    
 
     #mars.update(mars_data)
 
